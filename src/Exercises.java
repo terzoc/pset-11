@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class Exercises {
 
   public int findMe(int[] list, int target) {
+    for (int i = 0; i < i.length; i++) {
+          if (arr[i] == target)
+              return i;
+      }
     return -1;
   }
 
