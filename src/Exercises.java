@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Exercises {
 
   public int findMe(int[] list, int target) {
-    for (int i = 0; i < i.length; i++) {
+    for (int i = 0; i < list.length; i++) {
           if (arr[i] == target)
               return i;
       }
@@ -11,7 +11,7 @@ public class Exercises {
   }
 
   public int findMe(ArrayList<String> list, String target) {
-    for (int i = 0; i < i.length; i++) {
+    for (int i = 0; i < i.size(); i++) {
           if (arr[i] == target)
               return i;
       }
