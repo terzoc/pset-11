@@ -4,7 +4,7 @@ public class Exercises {
 
   public int findMe(int[] list, int target) {
     for (int i = 0; i < list.length; i++) {
-          if (arr[i] == target)
+          if (list[i] == target)
               return i;
       }
     return -1;
