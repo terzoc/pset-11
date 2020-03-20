@@ -11,6 +11,10 @@ public class Exercises {
   }
 
   public int findMe(ArrayList<String> list, String target) {
+    for (int i = 0; i < i.length; i++) {
+          if (arr[i] == target)
+              return i;
+      }
     return -1;
   }
 
