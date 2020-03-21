@@ -47,22 +47,25 @@ public class Exercises {
   }
 
   public int findMeFaster(String[] list, String target) {
-    if (list == null) {
+    if (list == null || list.length == 0 || target.equals(null)) {
      return -1;
    }
-   int start = 0;
-   int middle = 0;
-   int end = list.size() - 1;
 
-   while (start <= end) {
-     middle = (start + end) / 2;
-     if (list.get(middle) < target) {
-       start = middle + 1;
-     }else if (list.get(middle) > target) {
-       end = middle - 1;
-     }else if (list.get(middle) == target) {
+   boolean isFound = false;
+   int start = 0;
+   int end = list.length;
+
+   while (start < end) {
+     int middle = (start + end) / 2;
+
+     if (list[middle].equals(target)) {
        return middle;
+     } else if (list[middle].compareTo(target) < 0) {
+       end = middle -1;
+     } else if (list[middle].compareTo(target) > 0) {
+       start = middle + 1;
      }
+
    }
     return -1;
   }
