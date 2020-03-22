@@ -51,20 +51,19 @@ public class Exercises {
      return -1;
    }
 
-   boolean isFound = false;
    int start = 0;
    int end = list.length;
 
    while (start < end) {
      int middle = (start + end) / 2;
 
-     if (list[middle].equals(target)) {
-       return middle;
-     } else if (list[middle].compareTo(target) < 0) {
-       end = middle -1;
-     } else if (list[middle].compareTo(target) > 0) {
-       start = middle + 1;
-     }
+     if (list[middle].compareTo(target) < 0) {
+         start = middle + 1;
+       }else if (list[middle].compareTo(target) > 0) {
+         end = middle - 1;
+       }else if (list[middle].compareTo(target) == 0) {
+         return middle;
+       }
 
    }
     return -1;
