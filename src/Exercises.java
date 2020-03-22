@@ -84,12 +84,27 @@ public class Exercises {
                   }
               }
           }
-      } 
+      }
       return list;
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
-    return null;
+    if (list == null || list.length == 0) {
+          return null;
+      }
+
+      if (ascending) {
+          for (int i = 0; i < list.length -1; i++) {
+              for (int j = 0; j < list.length -1 -i; j++) {
+                  if (list[j] > list[j + 1]) {
+                      int temp = list[j];
+                      list[j] = list[j + 1];
+                      list[j+1] = temp;
+                  }
+              }
+          }
+      }
+      return list;
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
