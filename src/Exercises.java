@@ -108,17 +108,22 @@ public class Exercises {
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-    if (list == null || list.size() == 0) {
+	  if (list == null || list.size() == 0) {
           return null;
       }
 
       if (ascending) {
-          for (int i = 0; i < list.size() -1; i++) {
-              for (int j = 0; j < list.size()-1-i; j++) {
-                  if (list.get(j).compareTo(list.get(j+1)) > 0) {
-                      String temp = list.get(j);
-                      list.set(j, list.get(j+1));
-                      list.set(j+1, temp);
+          for (int i = 1; i < list.size(); i++) {
+              int key = list.get(i);
+              for (int j = i - 1; j >= 0; j--) {
+                  if (key < list.get(j)) {
+                      list.set(j + 1,list.get(j));
+                      if (j == 0) {
+                          list.set(0, key);
+                      }
+                  } else {
+                      list.set(j + 1, key);
+                      break;
                   }
               }
           }
