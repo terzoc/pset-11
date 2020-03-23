@@ -175,7 +175,27 @@ public class Exercises {
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-	
+	  if (list == null || list.size() == 0) {
+          return null;
+      }
+
+      for (int i = 0; i < list.size(); i++) {
+          String smallest = list.get(i);
+          int smallestIndex = i;
+          for (int j = i; j < list.size(); j++) {
+              String value = list.get(j);
+              if (value.compareTo(smallest) < 0) {
+                  smallest = value;
+                  smallestIndex = j;
+              }
+          }
+          if (smallestIndex != i) {
+              String head = list.get(i);
+              list.set(i, smallest);
+              list.set(smallestIndex, head);
+          }
+      }
+      return list;
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
