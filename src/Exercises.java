@@ -150,15 +150,32 @@ public class Exercises {
              list[j] = temp;
         }
     }
-      return list;
+   	return list;
   }
 
   public int[] selection(int[] list, boolean ascending) {
-    return null;
+	  if (list == null || list.length == 0) {
+          return null;
+      }
+	  
+      if (ascending) {
+          for (int i = 0; i < list.length - 1; i++) {
+              int index = i;
+              for (int j = i + 1; j < list.length; j++) {
+                  if (list[j] < list[index]) {
+                      index = j;
+                  }
+              }
+              int smallerNumber = list[index];
+              list[index] = list[i];
+              list[i] = smallerNumber;
+          }
+      }
+      return list;       
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-    return null;
+	
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
