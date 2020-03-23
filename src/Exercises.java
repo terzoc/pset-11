@@ -132,26 +132,24 @@ public class Exercises {
   }
 
   public String[] insertion(String[] list, boolean ascending) {
-    if (list == null || list.size() == 0) {
+    if (list == null || list.length == 0) {
           return null;
       }
 
-      if (ascending) {
-          for (int i = 1; i < list.size(); i++) {
-              int key = list.get(i);
-              for (int j = i - 1; j >= 0; j--) {
-                  if (key < list.get(j)) {
-                      list.set(j + 1,list.get(j));
-                      if (j == 0) {
-                          list.set(0, key);
-                      }
-                  } else {
-                      list.set(j + 1, key);
-                      break;
-                  }
-              }
-          }
-      }
+    String temp;
+    if (ascending) {
+        for (int i = 1; i < list.length; i++) {
+            temp = list[i];
+            int j = 0;
+            for (j = i; j > 0; j--)
+                if (temp.compareTo(list[j - 1]) < 0) {
+                    list[j] = list[j - 1];
+                } else {
+                    break;
+                }
+             list[j] = temp;
+        }
+    }
       return list;
   }
 
